@@ -16,4 +16,6 @@ keys.DBKEYS = {
 keys.SEED = process.env.SEED;
 keys.EXPIRESIN = process.env.EXPIRESIN;
 
+keys.NUMBER_ALLOWED_USERS = process.env.NUMBER_ALLOWED_USERS || 300;
+
 module.exports = keys;

@@ -9,6 +9,6 @@ const { addCity, addBrandOffices, getUserList } = require('../controllers/admin.
 // ============================
 router.post('/admin/createCity', isLoggedIn, addCity);
 router.post('/admin/createBranch', isLoggedIn, addBrandOffices);
-router.post('/admin/userList', isLoggedIn, getUserList);
+router.get('/admin/userList', isLoggedIn, getUserList);
 
 module.exports = router;

@@ -39,7 +39,7 @@ adminCtrl.getUserList = async (req, res) => {
       return res.json({ 'response': 'Formato de envio incorrecto para id_city: ' + req.body.id_city, 'result': 'ko' });
     }
 
-    const rows = await pool.query(`SELECT * FROM users u INNER JOIN branch_offices b ON b.id_branch_office = u.id_branch_office 
+    const rows = await pool.query(`SELECT u.names, u.surnames, u.mobile, u.identification_number, u.birthday_date, b.name AS branch, c.name AS city FROM users u INNER JOIN branch_offices b ON b.id_branch_office = u.id_branch_office 
     INNER JOIN cities c ON c.id_city = b.id_city WHERE c.id_city IN (?) ORDER BY u.surnames`, [
       cities
     ]);

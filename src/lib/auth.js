@@ -6,7 +6,7 @@ const { SEED } = require('../config/keys');
 // =============================
 module.exports = {
   isLoggedIn (req, res, next) {
-    var token = req.body.token;
+    var token = req.query.token;
     jwt.verify(token, SEED, (err, decoded) => {
       if (err) {
         return res
