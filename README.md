@@ -5,4 +5,5 @@
 ## ya esta creado el archivo docker para hacer el despliegue en docker
 
 docker build -t api-gym .
+## 
 docker run -it api-gym
